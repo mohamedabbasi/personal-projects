@@ -2,9 +2,12 @@ import requests
 from tkinter import Tk, Label, mainloop
 import math
 
-city_name = "Ottawa"
-api_key = "af5debc865767c2b4cf7635f3d1c66da"
+city_name = input("Enter your city: ")
+api_key = input("Enter your API Key: ")
 
+""" You can get this key by going to https://openweathermap.org/api
+    Create an account for free and click on your name after you login
+    And hit "My API Keys" """
 
 def get_weather(api_key, city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
@@ -23,18 +26,15 @@ def get_weather(api_key, city):
         'humidity': humidity
     }
 
-
 weather = get_weather(api_key, city_name)
 root = Tk()
 root.geometry("300x300")
 root.title(f'{city_name} Weather')
 
-
 def display_city_name(city):
     city_label = Label(root, text=f"{city}")
     city_label.config(font=("Consolas", 28))
     city_label.pack(side="top")
-
 
 def display_stats(weather):
     temp = Label(root, text=f"Temperature: {weather['temp']}°C")
@@ -48,7 +48,6 @@ def display_stats(weather):
     temp.pack(side="top")
     feels_like.pack(side="top")
     humidity.pack(side="top")
-
 
 display_city_name(city_name)
 display_stats(weather)
