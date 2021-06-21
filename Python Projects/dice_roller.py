@@ -15,7 +15,6 @@ class Dice_roller(object):
         self.label.config(text=f"{random.choice(symbols)}{random.choice(symbols)}")
         self.label.pack()
 
-
 if __name__ == '__main__':
     root = Tk()
     root.title("Dice Roller")
