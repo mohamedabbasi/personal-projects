@@ -1,6 +1,6 @@
-# This code uses the speedtest module which can be downloaded through
-# Typing "pip install speedtest-cli" in the terminal; p.s it might also
-# Take a few seconds to run
+""" This code uses the speedtest module which can be downloaded through
+    Typing "pip install speedtest-cli" in the terminal; p.s it might also
+    Take a few seconds to run """
 
 import speedtest
 from tkinter import Tk, Label, mainloop
